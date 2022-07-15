@@ -39,10 +39,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
              holder.curls.setText(dataList.get(position).getUrl());
              holder.stimes.setText(dataList.get(position).getStart_time());
              holder.etimes.setText(dataList.get(position).getEnd_time());
-             holder.cdurations.setText(dataList.get(position).getDuration());
+            // holder.cdurations.setText(dataList.get(position).getDuration());
              holder.csites.setText(dataList.get(position).getSite());
-             holder.cin24s.setText(dataList.get(position).getIn_24_hours());
-             holder.cstatuses.setText(dataList.get(position).getStatus());
+            // holder.cin24s.setText(dataList.get(position).getIn_24_hours());
+            // holder.cstatuses.setText(dataList.get(position).getStatus());
     }
 
     @Override
@@ -58,12 +58,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.CustomViewHolder> {
                  super(itemView);
                  cnames = itemView.findViewById(R.id.cname);
                  curls = itemView.findViewById(R.id.curl);
+                 curls.setMovementMethod(LinkMovementMethod.getInstance()); // make text to hyperlink
+                 curls.setLinkTextColor(Color.RED);
                  stimes = itemView.findViewById(R.id.stime);
                  etimes = itemView.findViewById(R.id.etime);
-                 cdurations = itemView.findViewById(R.id.cduration);
+                // cdurations = itemView.findViewById(R.id.cduration);
                  csites = itemView.findViewById(R.id.csite);
-                 cin24s = itemView.findViewById(R.id.cin24);
-                 cstatuses = itemView.findViewById(R.id.cstatus);
+                // cin24s = itemView.findViewById(R.id.cin24);
+                // cstatuses = itemView.findViewById(R.id.cstatus);
              }
 
          }
